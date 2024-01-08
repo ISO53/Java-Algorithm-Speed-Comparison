@@ -30,19 +30,11 @@ public class Main {
 
         // ######################## CREATING TEST PARAMETERS ########################
         int testLength = 1024;
-        String[] randArr = new String[testLength];
         String[] palindromeArr = new String[testLength];
 
         Random random = new Random();
         for (int i = 0; i < testLength; i++) {
             int length = 10 + i * 400;
-
-            // Fill randArr with strings of increasing length
-            StringBuilder randomStr = new StringBuilder();
-            for (int j = 0; j < length; j++) {
-                randomStr.append((char) (random.nextInt(26) + 'a'));
-            }
-            randArr[i] = randomStr.toString();
 
             // Fill palindromeArr with palindromes of increasing length
             StringBuilder palindrome = new StringBuilder();
@@ -55,14 +47,7 @@ public class Main {
         }
 
         // ######################## CREATING TEST CASES ########################
-        TestCase tc1 = new TestCase
-                .Builder()
-                .setParameterCount(1)
-                .setTestCount(testLength)
-                .addParameter(randArr)
-                .build();
-
-        TestCase tc2 = new TestCase
+        TestCase tc = new TestCase
                 .Builder()
                 .setParameterCount(1)
                 .setTestCount(testLength)
@@ -70,32 +55,18 @@ public class Main {
                 .build();
 
         // ######################## CREATING TEST GENERATORS ########################
-        TestGenerator tg1 = new TestGenerator
+        TestGenerator tg = new TestGenerator
                 .Builder()
-                .setTestName("'IsPalindrome' Algorithm Speed Comparison [Random String]")
+                .setTestName("'IsPalindrome' Algorithm Speed Comparison")
                 .addMethod(method1)
                 .addMethod(method2)
-                .addTestCase(tc1)
-                .build();
-
-        TestGenerator tg2 = new TestGenerator
-                .Builder()
-                .setTestName("'IsPalindrome' Algorithm Speed Comparison [Palindrome String]")
-                .addMethod(method1)
-                .addMethod(method2)
-                .addTestCase(tc2)
+                .addTestCase(tc)
                 .build();
 
         // ######################## RUN THE TESTS ########################
-        tg1.run();
-
-        tg2.run();
+        tg.run();
 
         // ######################## VISUALIZE THE RESULTS ########################
-        tg1.visualize();
-
-        tg2.visualize();
-
-
+        tg.visualize();
     }
 }
