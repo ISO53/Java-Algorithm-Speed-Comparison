@@ -46,7 +46,7 @@ public class LineChart extends JFrame {
         JFreeChart chart = ChartFactory.createXYLineChart(
                 "Method Execution Times",
                 "Run Number",
-                "Execution Time (ms)",
+                "Execution Time (nano sn)",
                 dataset
         );
 
