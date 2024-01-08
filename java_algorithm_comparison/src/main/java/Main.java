@@ -29,12 +29,12 @@ public class Main {
         });
 
         // ######################## CREATING TEST PARAMETERS ########################
-        int testLength = 1024;
+        int testLength = 200;
         String[] palindromeArr = new String[testLength];
 
         Random random = new Random();
         for (int i = 0; i < testLength; i++) {
-            int length = 10 + i * 400;
+            int length = (int) (10 + Math.pow(2, (double) i / 10));
 
             // Fill palindromeArr with palindromes of increasing length
             StringBuilder palindrome = new StringBuilder();
