@@ -75,11 +75,11 @@ Use the TestCase.Builder to define test cases with specific parameters.
 
 ```Java
 TestCase tc = new TestCase
-              .Builder()
-              .setParameterCount(1)         // you need to add this first
-              .setTestCount(testLength)     // and add this second
-              .addParameter(palindromeArr)  // you can add as much parameter as you want
-              .build();
+            .Builder()
+            .setParameterCount(1)         // you need to add this first
+            .setTestCount(testLength)     // and add this second
+            .addParameter(palindromeArr)  // you can add as much parameter as you want
+            .build();
 ```
 
 ### Create Test Generator
@@ -88,13 +88,13 @@ Utilize the TestGenerator.Builder to set up the testing environment by adding me
 
 ```Java
 TestGenerator tg = new TestGenerator
-          .Builder()
-          .setTestName("'IsPalindrome' Algorithm Speed Comparison") // optional
-          .addMethod(method1) // you must add at least one method
-          .addMethod(method2) // you can add as much method as you want
-          .addTestCase(tc)    // you must add only one test case.
-                              // if you add more than one the last one will be used
-          .build();
+            .Builder()
+            .setTestName("'IsPalindrome' Algorithm Speed Comparison") // optional
+            .addMethod(method1) // you must add at least one method
+            .addMethod(method2) // you can add as much method as you want
+            .addTestCase(tc)    // you must add only one test case.
+                                // if you add more than one the last one will be used
+            .build();
 ```
 
 ### Run the Test
