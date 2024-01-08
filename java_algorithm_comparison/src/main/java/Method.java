@@ -1,5 +1,9 @@
 public class Method {
 
+    public interface IMethod {
+        void execute(Object ...parameters);
+    }
+
     String name;
     IMethod methodReference;
 
@@ -8,7 +12,17 @@ public class Method {
         this.methodReference = methodReference;
     }
 
-    public void execute() {
-        methodReference.execute();
+    public String getName() {
+        return name;
+    }
+
+    public IMethod getMethodReference() {
+        return methodReference;
+    }
+
+    public void execute(Object ...parameters) {
+        methodReference.execute(parameters);
     }
 }
+
+
