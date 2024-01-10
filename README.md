@@ -56,7 +56,7 @@ Method method2 = new Method("Method_2", (params) -> {
 ```
 
 > [!NOTE]
-> Keep in mind that this function does not return a value as it solely focuses on comparing the speed difference and does not check the correctness of the answer.
+> Keep in mind that these functions does not return a values as they solely focuses on comparing the speed difference and does not check the correctness of the answer.
 
 ### Create Parameters
 
